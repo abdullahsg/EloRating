@@ -15,7 +15,6 @@ def load_data():
 
 # Main app
 st.title("Player Match Details")
-st.write("Search for matches involving a specific player.")
 
 # Load data
 data = load_data()
@@ -24,6 +23,7 @@ data = load_data()
 st.write(data)
 
 # Player name input
+st.write("Search for matches involving a specific player.")
 player_name = st.text_input("Enter Player Name:")
 
 # Enter button
