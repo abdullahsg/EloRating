@@ -20,6 +20,9 @@ st.write("Search for matches involving a specific player.")
 # Load data
 data = load_data()
 
+# Show all data initially
+st.write(data)
+
 # Player name input
 player_name = st.text_input("Enter Player Name:")
 
