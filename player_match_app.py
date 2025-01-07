@@ -7,8 +7,8 @@ def load_data():
     file_path = 'Elo Ratings - Match Detail.csv'  # Update with your deployment file path
     match_detail = pd.read_csv(file_path, header=1)  # Use 2nd row as header
     # Select only columns A, B, C, D, I, J
-    match_detail = match_detail.iloc[:, [0, 1, 2, 3, 4, 5, 8, 9]]
-    match_detail.columns = ['Date', 'Player 1', 'Player 2', 'Result', 'Score P1', 'Score P2', 'Rating After Match P1', 'Rating After Match P2']
+    match_detail = match_detail.iloc[:, [0, 1, 2, 3, 8, 9]]
+    match_detail.columns = ['Date', 'Player 1', 'Player 2', 'Result', 'Rating After Match P1', 'Rating After Match P2']
     # Ensure 'Result' column is treated as text
     match_detail['Result'] = match_detail['Result'].astype(str)
     return match_detail
