@@ -10,8 +10,6 @@ def load_data():
     # Select only columns A, B, C, D, I, J
     match_detail = match_detail.iloc[:, [0, 1, 2, 3, 8, 9]]
     match_detail.columns = ['Date', 'Player 1', 'Player 2', 'Result', 'Rating After Match P1', 'Rating After Match P2']
-    # Ensure 'Result' column is treated as text
-    match_detail['Result'] = match_detail['Result'].astype(str)
     return match_detail
 
 # Main app
