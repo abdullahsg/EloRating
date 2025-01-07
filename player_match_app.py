@@ -22,12 +22,14 @@ data = load_data()
 # Show all data initially
 st.write(data)
 
-# Player name input
 st.write("Search for matches involving a specific player.")
-player_name = st.text_input("Enter Player Name:")
+# Player name input form
+with st.form(key='player_form'):
+    player_name = st.text_input("Enter Player Name:")
+    submit_button = st.form_submit_button(label='Enter')
 
-# Enter button
-if st.button("Enter"):
+# Enter button action
+if submit_button:
     if player_name:
         player_name_lower = player_name.lower()
         filtered_data = data[(data['Player 1'].str.lower() == player_name_lower) | (data['Player 2'].str.lower() == player_name_lower)]
