@@ -29,7 +29,8 @@ player_name = st.text_input("Enter Player Name:")
 # Enter button
 if st.button("Enter"):
     if player_name:
-        filtered_data = data[(data['Player 1'] == player_name) | (data['Player 2'] == player_name)]
+        player_name_lower = player_name.lower()
+        filtered_data = data[(data['Player 1'].str.lower() == player_name_lower) | (data['Player 2'].str.lower() == player_name_lower)]
         st.write(filtered_data)
     else:
         st.write("Please enter a player name.")
