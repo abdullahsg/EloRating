@@ -33,9 +33,9 @@ with st.form(key='player_form'):
 if submit_button:
     if player_name:
         player_name_lower = player_name.lower()
-        #filtered_data = data[data.apply(lambda row: fuzz.partial_ratio(player_name_lower, row['Player 1'].lower()) > 80 or fuzz.partial_ratio(player_name_lower, row['Player 2'].lower()) > 80, axis=1)]
-        filtered_data = data[(data['Player 1'].str.contains(player_name, case=False, na=False)) |
-                         (data['Player 2'].str.contains(player_name, case=False, na=False))]
+        filtered_data = data[data.apply(lambda row: fuzz.partial_ratio(player_name_lower, row['Player 1'].lower()) > 80 or fuzz.partial_ratio(player_name_lower, row['Player 2'].lower()) > 80, axis=1)]
+        # filtered_data = data[(data['Player 1'].str.contains(player_name, case=False, na=False)) |
+        #                  (data['Player 2'].str.contains(player_name, case=False, na=False))]
 
         st.write(filtered_data)
     else:
